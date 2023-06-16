@@ -3,6 +3,7 @@ package com.example.sensores;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btn ;
 
+    private Button btn2 ;
+
+
+
     String verifContra = "carlitos123";
     String verifUsu = "carlitos123";
 
@@ -29,11 +34,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
         btn = (Button) findViewById(R.id.btn1);
         Nombre = (EditText) findViewById(R.id.Name);
         contrasena = (EditText) findViewById(R.id.Password);
         login = (TextView) findViewById(R.id.textView);
+        btn2 = (Button) findViewById(R.id.blanco);
 
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent IR = new Intent(Intent.ACTION_VIEW);
+                IR.setData(Uri.parse("https://www.javierblanco.com.ar"));
+                startActivity(IR);
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (nombreUsuario.equals(verifUsu) && contraseña.equals(verifContra)) {
 
-                    Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                    startActivity(intent);
+                    Intent popo = new Intent(getApplicationContext(), MainActivity2.class);
+                    startActivity(popo);
                 } else {
                     Toast.makeText(MainActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
                 }

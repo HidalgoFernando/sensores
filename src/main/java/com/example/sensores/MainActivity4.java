@@ -46,8 +46,8 @@ public class MainActivity4 extends AppCompatActivity {
     }
 
     public void Sumo(View v){
-        Double Resultado2 = Double.parseDouble(Num1.getText().toString()) + Double.parseDouble(Num2.getText().toString());
-        result.setText(Resultado2+"");
+        Double Resultado1 = Double.parseDouble(Num1.getText().toString()) + Double.parseDouble(Num2.getText().toString());
+        result.setText(Resultado1+"");
     }
     public void resto(View v){
         Double Resultado2 = Double.parseDouble(Num1.getText().toString()) - Double.parseDouble(Num2.getText().toString());
